@@ -1,11 +1,4 @@
-# minimist <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
-
-[![github actions][actions-image]][actions-url]
-[![coverage][codecov-image]][codecov-url]
-[![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url]
-
-[![npm badge][npm-badge-png]][package-url]
+# minimist
 
 parse argument options
 
@@ -39,16 +32,6 @@ $ deno run example/parse.js -x 3 -y 4 -n5 -abc --beep=boop foo bar baz
   beep: "boop"
 }
 ```
-
-# security
-
-Previous versions had a prototype pollution bug that could cause privilege
-escalation in some circumstances when handling untrusted user input.
-
-Please use version 1.2.6 or later:
-
-* https://security.snyk.io/vuln/SNYK-JS-MINIMIST-2429795 (version <=1.2.5)
-* https://snyk.io/vuln/SNYK-JS-MINIMIST-559764 (version <=1.2.3)
 
 # methods
 
@@ -97,14 +80,6 @@ and `argv['--']` with everything after the `--`. Here's an example:
 * `opts.unknown` - a function which is invoked with a command line parameter not
 defined in the `opts` configuration object. If the function returns `false`, the
 unknown option is not added to `argv`.
-
-# install
-
-With [npm](https://npmjs.org) do:
-
-```
-npm install minimist
-```
 
 # license
 
