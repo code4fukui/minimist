@@ -1,7 +1,5 @@
-'use strict';
-
-var parse = require('../');
-var test = require('tape');
+import parse from '../index.js';
+import { test } from "./tape.js";
 
 test('dotted alias', function (t) {
 	var argv = parse(['--a.b', '22'], { default: { 'a.b': 11 }, alias: { 'a.b': 'aa.bb' } });

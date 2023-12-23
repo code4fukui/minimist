@@ -1,4 +1,4 @@
-'use strict';
+import parse from '../index.js';
 
-var argv = require('../')(process.argv.slice(2));
+const argv = parse(Deno.args);
 console.log(argv);

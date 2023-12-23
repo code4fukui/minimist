@@ -1,7 +1,5 @@
-'use strict';
-
-var parse = require('../');
-var test = require('tape');
+import parse from '../index.js';
+import { test } from "./tape.js";
 
 test('boolean and alias is not unknown', function (t) {
 	var unknown = [];

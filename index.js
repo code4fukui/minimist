@@ -1,5 +1,3 @@
-'use strict';
-
 function hasKey(obj, keys) {
 	var o = obj;
 	keys.slice(0, -1).forEach(function (key) {
@@ -20,7 +18,7 @@ function isConstructorOrProto(obj, key) {
 	return (key === 'constructor' && typeof obj[key] === 'function') || key === '__proto__';
 }
 
-module.exports = function (args, opts) {
+export default function (args, opts) {
 	if (!opts) { opts = {}; }
 
 	var flags = {

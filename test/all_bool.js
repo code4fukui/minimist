@@ -1,7 +1,12 @@
-'use strict';
+import parse from '../index.js';
+//var test = require('tape');
+import * as _t from "https://deno.land/std/testing/asserts.ts";
 
-var parse = require('../');
-var test = require('tape');
+const t = {
+	deepEqual: _t.assertEquals,
+	end: () => {},
+};
+const test = (name, func) => Deno.test(name, () => func(t));
 
 test('flag boolean true (default all --args to boolean)', function (t) {
 	var argv = parse(['moo', '--honk', 'cow'], {

@@ -1,7 +1,5 @@
-'use strict';
-
-var parse = require('../');
-var test = require('tape');
+import parse from '../index.js';
+import { test } from "./tape.js";
 
 test('short -k=v', function (t) {
 	t.plan(1);

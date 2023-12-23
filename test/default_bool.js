@@ -1,7 +1,5 @@
-'use strict';
-
-var test = require('tape');
-var parse = require('../');
+import parse from '../index.js';
+import { test } from "./tape.js";
 
 test('boolean default true', function (t) {
 	var argv = parse([], {

@@ -1,7 +1,5 @@
-'use strict';
-
-var parse = require('../');
-var test = require('tape');
+import parse from '../index.js';
+import { test } from "./tape.js";
 
 test('stops parsing on the first non-option when stopEarly is set', function (t) {
 	var argv = parse(['--aaa', 'bbb', 'ccc', '--ddd'], {

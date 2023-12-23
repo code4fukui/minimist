@@ -15,26 +15,28 @@ fanciful decoration.
 # example
 
 ``` js
-var argv = require('minimist')(process.argv.slice(2));
+import parse from "https://code4fukui.github.io/minimist/index.js";
+
+const argv = parse(Deno.args);
 console.log(argv);
 ```
 
 ```
-$ node example/parse.js -a beep -b boop
-{ _: [], a: 'beep', b: 'boop' }
+$ deno run example/parse.js -a beep -b boop
+{ _: [], a: "beep", b: "boop" }
 ```
 
 ```
-$ node example/parse.js -x 3 -y 4 -n5 -abc --beep=boop foo bar baz
+$ deno run example/parse.js -x 3 -y 4 -n5 -abc --beep=boop foo bar baz
 {
-	_: ['foo', 'bar', 'baz'],
-	x: 3,
-	y: 4,
-	n: 5,
-	a: true,
-	b: true,
-	c: true,
-	beep: 'boop'
+  _: [ "foo", "bar", "baz" ],
+  x: 3,
+  y: 4,
+  n: 5,
+  a: true,
+  b: true,
+  c: true,
+  beep: "boop"
 }
 ```
 
@@ -51,7 +53,7 @@ Please use version 1.2.6 or later:
 # methods
 
 ``` js
-var parseArgs = require('minimist')
+import parseArgs from "https://code4fukui.github.io/minimist/index.js";
 ```
 
 ## var argv = parseArgs(args, opts={})
@@ -82,7 +84,7 @@ first non-option
 and `argv['--']` with everything after the `--`. Here's an example:
 
   ```
-  > require('./')('one two three -- four five --six'.split(' '), { '--': true })
+  > parseArgv('one two three -- four five --six'.split(' '), { '--': true })
   {
     _: ['one', 'two', 'three'],
     '--': ['four', 'five', '--six']
