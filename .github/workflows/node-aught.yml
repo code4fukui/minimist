@@ -1,4 +1,4 @@
-name: 'Tests: node.js < 10'
+name: 'Tests'
 
 on: [pull_request, push]
 
@@ -7,14 +7,14 @@ permissions:
 
 jobs:
   tests:
-    uses: ljharb/actions/.github/workflows/node.yml@main
+    uses: denoland/setup-deno@v1
     with:
-      range: '< 10 >= 0.7'
+      deno-version: v1.x
       type: minors
-      command: npm run tests-only
+      command: deno test test/*
 
   node:
-    name: 'node < 10'
+    name: 'Tests'
     needs: [tests]
     runs-on: ubuntu-latest
     steps:
